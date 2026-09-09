@@ -1,3 +1,6 @@
+const SUPABASE_URL = 'https://bfpwsqbzrwnznrbnoswi.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_-_L-PBjPFSCOVRJWfkwTig_9GikKfqa';
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 const rewards=document.querySelectorAll('.reward');
 let selected='';
 rewards.forEach(button=>{
