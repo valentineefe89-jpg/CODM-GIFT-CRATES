@@ -1,0 +1,27 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#050505;color:#fff}
+body{min-height:100vh;background-image:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,.45) 45%,rgba(0,0,0,.92) 100%),url("assets/cp-background.png");background-position:center top;background-size:cover;background-repeat:no-repeat;background-attachment:fixed}
+.page{min-height:100vh;padding:18px 16px 30px;background:linear-gradient(90deg,rgba(0,0,0,.48),transparent 48%,rgba(0,0,0,.35))}
+.topbar{width:100%;max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-size:20px;font-weight:900;letter-spacing:1px}.brand span{font-weight:500}
+.event{color:#ffd400;border:1px solid #ffd400;padding:9px 12px;font-size:10px;font-weight:900;letter-spacing:1px;white-space:nowrap}
+.hero{width:100%;max-width:900px;margin:70px auto 0;text-align:center}
+.kicker{margin:0 0 12px;color:#ffd400;font-size:12px;font-weight:900;letter-spacing:4px}
+h1{margin:0;font-size:clamp(48px,10vw,96px);line-height:.86;font-weight:950;letter-spacing:-3px;text-shadow:0 6px 22px #000}
+h1 span{color:#ffd400}
+.hero>p{max-width:620px;margin:24px auto 30px;color:#eee;font-size:15px;line-height:1.5}
+.rewards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;width:100%;max-width:800px;margin:0 auto}
+.reward{min-width:0;padding:18px 8px;background:rgba(5,5,5,.88);border:1px solid #b18f00;color:#fff;cursor:pointer;transition:.18s}
+.reward strong{display:block;color:#ffd400;font-size:32px;font-weight:950}.reward small{font-size:11px;font-weight:900;letter-spacing:2px}
+.reward:hover,.reward.active{background:#ffd400;color:#000;border-color:#fff;transform:translateY(-2px)}.reward:hover strong,.reward.active strong{color:#000}
+.form-card{width:100%;max-width:540px;margin:26px auto 0;padding:24px;background:rgba(5,5,5,.95);border:1px solid #3b3b3b;box-shadow:0 20px 60px #000}
+.form-card h2{margin:0;text-align:center;font-size:24px}.sub{text-align:center;color:#999;font-size:12px;margin:7px 0 20px}
+.field{width:100%;margin:0 0 15px;text-align:left}
+.field label{display:block;margin:0 0 7px;color:#fff;font-size:11px;font-weight:900;letter-spacing:.7px}
+.field input{display:block;width:100%;height:48px;padding:0 14px;border:1px solid #555;border-radius:2px;background:#151515;color:#fff;font-size:14px;outline:none}
+.field input:focus{border-color:#ffd400}
+.claim{display:block;width:100%;height:50px;margin-top:4px;border:0;border-radius:2px;background:#ffd400;color:#000;font-size:14px;font-weight:950;cursor:pointer}.claim:hover{background:#fff}
+.security{margin-top:15px;text-align:center;color:#777;font-size:10px;line-height:1.5}
+.result{margin-top:14px;padding:12px;border-left:3px solid #ffd400;background:#111;text-align:center;font-size:12px}
+footer{margin:32px auto 0;text-align:center;color:#aaa;font-size:9px;letter-spacing:2px}
+@media(max-width:650px){.page{padding:15px 10px 25px}.hero{margin-top:50px}.topbar{align-items:flex-start}.brand{font-size:16px}.event{font-size:8px;padding:8px}.rewards{grid-template-columns:repeat(2,1fr);gap:9px}.reward{padding:15px 5px}.reward strong{font-size:28px}.form-card{padding:20px 16px}.hero>p{font-size:14px}}
