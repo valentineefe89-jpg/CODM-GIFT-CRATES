@@ -1,3 +1,4 @@
+alert("JavaScript is working!");
 const SUPABASE_URL = 'https://bfpwsqbzrwnznrbnoswi.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_-_L-PBjPFSCOVRJWfkwTig_9GikKfqa';
 
