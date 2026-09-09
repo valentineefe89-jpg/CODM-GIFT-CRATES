@@ -63,15 +63,3 @@ document.querySelector('#claimForm').addEventListener('submit', async e => {
 
   result.textContent = 'Claim submitted successfully!';
 });
-
-One important thing
-
-Where it says:
-
-const SUPABASE_KEY = 'sb_publishable_-_L-PBjPFSCOVRJWfkwTig_9GikKfqa';
-
-put your existing Supabase publishable key there locally. Don't use a "service_role" or secret key.
-
-Then save/commit "script.js" to GitHub and redeploy on Vercel.
-
-After that, don't add the password field back. Your form should only use Email, UID, Player ID, and Reward.
